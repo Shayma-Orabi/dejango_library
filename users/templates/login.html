@@ -1,0 +1,31 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block title %}
+    Login
+{% endblock %}
+
+{% block contint %}
+    <img class="sideimg" src="{% static 'imges/login.jpg' %}" alt="image">
+    <div class="container">
+        <br>
+        <div class="container2">
+            <h2>Login</h2>
+            <form name="myForm" action="{% url 'users:login' %}" onsubmit="return validation()" method="post">
+                <div class="font">
+                    {{form.non_field_errors}}
+                </div>
+                <label for="">User Name</label>
+                {{form.username}}
+                <div id="nameErr" class="font"></div>
+                <br>
+                <br>
+                <label for="">Password</label>
+                {{form.password}}
+                <br>
+                <button type="submit">Sign Up</button>
+            </form>
+                  
+        </div>
+    </div>
+{% endblock%}

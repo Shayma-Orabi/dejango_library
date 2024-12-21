@@ -1,0 +1,55 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block title %}
+    {% if author != None%}
+        update author
+    {% else %}
+        Add author
+    {% endif %}
+{% endblock %}
+
+{% block contint %}
+<img class="sideimg" src="{% static 'imges/login.jpg' %}" alt="image">
+<div class="container">
+    <br>
+    <div class="container2">
+        <h3 style="align=center">
+            <a href="{% url 'library:list' %}">
+                <span role="img" aria-label="Author List" title="Author List">🔙back</span>
+            </a>
+        </h3>
+        <h2 style="align=center">
+            
+            {% if author != None%}
+                update author
+            {% else %}
+                Add author
+            {% endif %}
+        </h2>
+        {% if author != None%}
+            <form name="myForm" action="{% url 'library:edit' author.id %}" onsubmit="return validation()" method="post">
+        {% else %}
+            <form name="myForm" action="{% url 'library:add' %}" onsubmit="return validation()" method="post">
+        {% endif %}
+            {% csrf_token %}
+            <div class="font">
+                {{form.non_field_errors}}
+            </div>
+            <label for="name">First Name:</label>
+            {{form.first_name}}<br>
+
+            <label for="lname">Last Name:</label>
+            {{form.last_name}}<br>
+
+            <label for="Birthday">Birthday:</label>
+            {{form.birthday}}<br>
+
+            <label for="Note">Note</label>
+            {{form.description}}<br>
+
+            <button type="submit">Submit</button>
+        </form>          
+    </div>
+</div>
+{% endblock%}

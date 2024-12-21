@@ -1,0 +1,46 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block title %}
+    Book List
+{% endblock %}
+
+{% block contint %}
+    <section>
+        <div class="comtaomer" style=" align: center">
+            <h1>Book List</h1>
+            &nbsp&nbsp&nbsp<a href={% url 'library:add-book' author_id %} class="button">New</a>
+            <table>                   
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>title</th>
+                        <th>genre</th>
+                        <th>version</th>
+                        <th>section</th>
+                        <th>Description</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for book in books %}
+                        <tr>
+                            <td style="width:5%">{{book.id}}</td>
+                            <td style="width:15%">{{book.title}}</td>
+                            <td style="width:15%">{{book.genre}}</td>
+                            <td style="width:15%">{{book.version}}</td>
+                            <td style="width:15%">{{book.section}}</td>
+                            <td>{{book.description}}.</td>
+                            <td style="width:180px">
+                                <button class="button" onclick='handleEdit("{% url 'library:edit-book' book.id %}")'> Edit </buttom> 
+                                
+                                <button class="button" onclick='handleDelete("{% url 'library:delete-book' book.id %}")'> Delete </buttom> 
+                            </td>
+                        </tr>  
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </section>   
+{% endblock%}
+

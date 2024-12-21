@@ -1,0 +1,58 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block title %}
+    {% if book != None%}
+        update Book
+    {% else %}
+        Add Book
+    {% endif %}
+{% endblock %}
+
+{% block contint %}
+<img class="sideimg" src="{% static 'imges/login.jpg' %}" alt="image">
+<div class="container">
+    <br>
+    <div class="container2">
+        <h3 style="align=center">
+            <a href="{% url 'library:books'  author_id %}">
+                <span role="img" aria-label="Author List" title="Author List">🔙back</span>
+            </a>
+        </h3>
+        <h2 style="align=center">
+            {% if book != None%}
+                update biik
+            {% else %}
+                Add book
+            {% endif %}
+        </h2>
+        {% if book != None%}
+            <form name="myForm" action="{% url 'library:edit-book' book.id %}" onsubmit="return validation()" method="post">
+        {% else %}
+            <form name="myForm" action="{% url 'library:add-book' author_id %}" onsubmit="return validation()" method="post">
+        {% endif %}
+        
+            {% csrf_token %}
+            <div class="font">
+                {{form.non_field_errors}}
+            </div>
+            <label for="title">title:</label>
+            {{form.title}}<br>
+
+            <label for="genre">genre:</label>
+            {{form.genre}}<br>
+
+            <label for="version">version:</label>
+            {{form.version}}<br>
+
+            <label for="section">section:</label>
+            {{form.section}}<br>
+
+            <label for="Note">Note</label>
+            {{form.description}}<br>
+
+            <button type="submit">Submit</button>
+        </form>          
+    </div>
+</div>
+{% endblock%}

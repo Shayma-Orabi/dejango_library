@@ -1,0 +1,143 @@
+/* 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+} */
+body{
+    background-color: #fdfef7;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding:0;
+}
+
+.hero {
+    position: relative;
+    text-align: center;
+    
+}
+.hero img {
+    width: 90%;
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    padding-left: 135px;
+    margin-top: -5;
+}
+main {
+    margin: -10;
+}
+.section   {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    padding-left: 20;
+    margin: 10px;
+    border-radius: 25px;
+    height: 50%;
+    width: 50%;
+    gap: 50%;
+} 
+ins{
+    color: #d7eb24;
+}
+p{
+    color: #555;
+    font-size: medium;
+    font-weight: 200;
+    line-height: 1.6;
+    padding-left: 20;
+}
+nav {
+  padding: 1rem;
+  background-color: #44B78B;
+  color: white;
+  font-size: 2rem;
+  top: 0;
+}
+.title{
+    padding-left: 30;
+    margin-bottom: 3px;
+    color: #333;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  
+  table th {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px;
+    text-align: left;
+  }
+  
+  table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+  }
+  
+  
+  table tbody tr:nth-child(odd) {
+    background-color: #f9f9f9;
+  }
+  
+  table tbody tr:nth-child(even) {
+    background-color: #e9e9ff;
+  }
+  
+  table tbody tr:hover {
+    background-color: #d7e7ff;
+  }
+  .button{
+    display: inline-block;
+    padding: 10px 20px;
+    color: white;
+    background-color: #007bff;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 80px;
+  }
+  .button:active{
+    background-color: #003f7f;
+  }
+  .button:hover{
+    background-color: #0056b3;
+  }
+  .button + .button {
+    margin-left: 10px; /* Adjust the space as needed */
+  }
+  .logout {
+    display: inline-block;
+}
+
+.logout-button {
+    text-decoration: none;
+    color: #81dbb8;
+    font-size: 2rem;
+    background-color: #44B78B;
+    border: none;
+}
+
+.logout-button:hover {
+    opacity: .85;
+}
+a {
+  text-decoration: none;
+  color: #81dbb8;
+}
+
+a:hover {
+  opacity: .85;
+}
+
+li{
+  padding-left: 30;
+    margin-bottom: 3px;
+    color: #333;
+}

@@ -1,0 +1,65 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+
+{% block contint %}
+    <div class="hero">
+        <img src="{% static 'imges/home.jpg' %}" alt="Beautiful Scenery">
+    </div>
+    <br>
+    <br>
+    <h2 class="title">Library Policy for Adding Books and Publishers</h2>
+    <div class="section">
+        <p>To ensure the accuracy and consistency of our library catalog, employees must adhere to the following policies
+            and guidelines when adding books and publishers to the database: </p>
+    </div>
+    <h3 id="Book Addition Guidelines" class="title">Book Addition Guidelines</h3>
+    <div class="section">
+        <div>
+            <ul>
+                <li>  Verify the book's details (e.g., title, author, version, year of publication, etc) against
+                    authoritative sources such as the publisher's website or official bibliographic databases before adding
+                    it to the system.</li>
+                <li>  Assign the appropriate location based on the library's classification system.</li>
+                <li>  Include any relevant metadata in the descrubtion, such as subject headings, keywords, or genres, to
+                    improve catalog accessibility.</li>
+                <li>  Ensure the physical location of the book (e.g., Gener,section , shelf) is accurately recorded in the
+                    system.</li>
+                <li>  Cross-check for duplicates in the catalog to avoid multiple entries of the same title or edition.
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <h3 class="title">Publisher Addition Guidelines</h3>
+    <div class="section" id="Publisher Addition Guidelines">
+        <div>
+            <ul>
+                <li>  Verify the authenticity of the publisher through trusted resources, ensuring accurate entry of the
+                    publisher's name, address, and contact information.</li>
+                <li>  Use consistent naming conventions to avoid duplicate publisher entries (e.g., “Oxford University
+                    Press” instead of abbreviated or alternate forms).</li>
+            </ul>
+        </div>
+    </div>
+
+    <h3 class="title">Quality Assurance and Record Maintenance
+    </h3>
+    <div class="section" id="Quality Assurance and Record Maintenance">
+        <div>
+            <ul>
+                <li>  Regularly review entries for accuracy and completeness, addressing any discrepancies or errors.</li>
+                <li>  Report any issues or uncertainties to the library's catalog administrator or supervisor for
+                    resolution.</li>
+                <li>  Follow established library protocols and software guidelines to maintain the integrity of the
+                    catalog.</li>
+            </ul>
+            <p>Failure to comply with these policies may result in errors within the catalog and disrupt library operations.
+                Employees are encouraged to seek assistance if they encounter challenges during the cataloging process.</p>
+        </div>
+    </div>
+{% endblock %}

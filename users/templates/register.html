@@ -1,0 +1,39 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+
+{% block title %}
+    Register
+{% endblock %}
+
+{% block contint %}
+<div>
+    <img class="sideimg" src="{% static 'imges/login.jpg' %}" alt="image">
+        <div class="container">
+            <br>
+            <div class="container2">
+                <h2>Register</h2>
+                <form name="myForm" action="{% url 'users:register' %}" onsubmit="return validation()" method="post">
+                    {% csrf_token %}
+                    <label for="">User Name</label>
+                    {{form.username}}
+                    <div id="nameErr" class="font"></div>
+                    <br>
+                    <label for="">Email</label>
+                    <input type="email" name="email" placeholder="Email" required>
+                    <div id="emailErr" class="font"></div>
+                    <br>
+                    <label for="">Password</label>
+                    {{form.password1}}
+                    <br>
+                    <label for="">Password</label>
+                    {{form.password2}}
+
+                    <button type="submit">Sign Up</button>
+                </form>
+                <p>Already have an account? <a href="{% url 'users:login' %}">Login here</a></p>
+
+            </div>
+        </div>
+</div>
+{% endblock%}

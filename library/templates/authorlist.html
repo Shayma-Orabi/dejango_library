@@ -1,0 +1,51 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block title %}
+    Author List
+{% endblock %}
+
+{% block contint %}
+    <section>
+        <div class="comtaomer" style=" align: center">
+            <h1>Authors List</h1>
+            &nbsp&nbsp&nbsp<a href={% url 'library:add' %} class="button">New</a>
+            <table>                   
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Birthday</th>
+                        <th>Description</th>
+                        <th>Action</th>
+                        <th>Book</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for author in authors %}
+                        <tr>
+                            <td style="width:5%">{{author.id}}</td>
+                            <td style="width:15%">{{author.first_name}}</td>
+                            <td style="width:15%">{{author.last_name}}</td>
+                            <td style="width:20%">{{author.birthday}}</td>
+                            <td>{{author.description}}.</td>
+                            <td style="width:180px">
+                                {% comment %} <a href={% url 'library:edit' author.id %} class="button">update</a> {% endcomment %}
+                                <button class="button" onclick='handleEdit("{% url 'library:edit' author.id %}")'> Edit </buttom> 
+                                
+                                {% comment %} <a href={% url 'library:delete' author.id %} class="button">delete</a> {% endcomment %}
+                                <button class="button" onclick='handleDelete("{% url 'library:delete' author.id %}")'> Delete </buttom> 
+                            </td>
+                            <td style="width:90px">
+                                <button class="button" onclick='handleAdd("{% url 'library:books' author.id %}")'> Book </buttom> 
+                            </td>
+                            
+                        </tr>  
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </section>   
+{% endblock%}
+
